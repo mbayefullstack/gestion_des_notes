@@ -1,0 +1,5 @@
+ <!-- data-id="<?= $row['id_eleve'];?>" data-nom="<?= $row['nom'];?>"
+          data-prenom="<?= $row['prenom'];?>" data-datedenaisssance="<?= $row['date_de_naisssance'];?>"
+          data-lieudenaisssance="<?= $row['lieu_de_naisssance'];?>"
+           data-numero="<?= $row['numero'];?>"
+           data-type-eleve="<?= $row['type_eleve'];?>" -->

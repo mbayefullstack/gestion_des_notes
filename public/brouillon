@@ -1,0 +1,45 @@
+<?php
+namespace Validator;
+
+class AnneeValidator
+{
+    private static $tab;
+
+    private static function verifierSring($value)
+    {
+        return is_numeric($value) && (int)$value == $value;
+    }
+
+    private static function return4PremierLettre($string)
+    {
+        return substr($string, 0, 4);
+    }
+
+    private static function return4DernierLettre($string)
+    {
+        return substr($string, -4);
+    }
+
+    public static function getTab($libelle)
+    {
+        $deb = self::return4PremierLettre($libelle);
+        $fin = self::return4DernierLettre($libelle);
+        if (strlen($libelle )!= 9 ) {
+            self::$tab[]= "L'Annee dois avoir 9 letters.";
+        }
+        if (!self::verifierSring($deb)) {
+            self::$tab[]= "Les 4 premiers caracr=tes di=oivent être une lettre.";
+        }
+        if (!self::verifierSring($fin)) {
+            self::$tab[]= "Les 4 derniers caracr=tes di=oivent être une lettre.";
+        }
+        if ($libelle[4] != '/') {
+            self::$tab[]= "Le separateur doit être /.";
+        }
+        if ((((int)$fin - (int)$deb) != 1)) {
+            echo "L'année scolaire doit être un an! ";
+        }
+        return self::$tab;
+    }
+}
+

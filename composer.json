@@ -1,0 +1,18 @@
+{
+    "name": "mbayefullstack/gestion_des_notes",
+    "authors": [
+        {
+            "name": "Moustapha MBAYE",
+            "email": "mmbaye11@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Route\\": "app/routers",
+            "Controller\\": "app/controllers",
+            "Model\\": "app/modeles",
+            "Validator\\":"app/validations/"
+        }
+    },
+    "require": {}
+}
